@@ -19,7 +19,7 @@ module testbench;
         $display("a = %b, b = %b",a,b);
         #5 a = 1;
         $display("a = %b, b = %b",a,b);
-        #5 a = 0; //time delys stack up together; so, the command after the second #5 happens after 10 time unit
+        #5 a = 0; //within the same initial block, time delys stack up together; so, the command after the second #5 happens after 10 time unit
         $display("a = %b, b = %b",a,b);
         #5 a = 1;
         $display("a = %b, b = %b",a,b);
@@ -29,6 +29,6 @@ module testbench;
 
     end
 
-    not_gate gate1(a,b); //instantiating the module since we can't call the module for output
+    not_gate gate1(a,b); //creating an instance of the module since we can't call the module for output
 
 endmodule
