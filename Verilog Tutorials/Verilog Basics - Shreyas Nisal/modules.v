@@ -7,7 +7,6 @@ module not_gate(a,b);
     assign b = !a; //use the 'assign' keyword when dealing with wires
 endmodule
 
-
 module testbench;
 
     reg a;
