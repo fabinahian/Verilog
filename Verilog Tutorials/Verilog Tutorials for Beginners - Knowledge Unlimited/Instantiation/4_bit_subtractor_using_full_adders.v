@@ -98,5 +98,5 @@ a =  1, b =  2, borrow_out = 0, diff = 15
 a =  1, b =  3, borrow_out = 0, diff = 14
 */
 
-/*you will notice that we are getting a diff of 14 when a = 1 and b = 3. You have to take 2's complement of 14 which will result in negative 2.
+/*you will notice that we are getting a diff of 14 when a = 1 and b = 3. You have to take 2's complement of 14 which will result in 2. Also, since borrow_out = 0, it means the answer is negative 2.
 */
