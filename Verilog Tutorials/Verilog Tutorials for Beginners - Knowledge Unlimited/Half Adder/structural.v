@@ -21,7 +21,7 @@ module testbench;
   wire carry, sum;
 
   initial begin
-    a = 1'b0;
+    #2 a = 1'b0;
     b = 1'b0;
 
     #2 a = 1'b0;
@@ -46,3 +46,11 @@ module testbench;
   );
 
 endmodule
+
+/* OUTPUT:
+time = 0, a = x, b = x, carry = x, sum = x
+time = 2, a = 0, b = 0, carry = 0, sum = 0
+time = 4, a = 0, b = 1, carry = 0, sum = 1
+time = 6, a = 1, b = 0, carry = 0, sum = 1
+time = 8, a = 1, b = 1, carry = 1, sum = 0
+*/
