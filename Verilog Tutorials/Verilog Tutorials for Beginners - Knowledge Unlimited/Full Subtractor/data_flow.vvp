@@ -1,0 +1,90 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "S:\iverilog\lib\ivl\system.vpi";
+:vpi_module "S:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "S:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "S:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "S:\iverilog\lib\ivl\va_math.vpi";
+S_000001ada6d16030 .scope module, "testbench" "testbench" 2 19;
+ .timescale -12 -12;
+v000001ada6d14940_0 .var "a", 0 0;
+v000001ada6d14bc0_0 .var "b", 0 0;
+v000001ada6d14b20_0 .var "borrow_in", 0 0;
+v000001ada6d14760_0 .net "borrow_out", 0 0, L_000001ada6d64ed0;  1 drivers
+v000001ada6d14c60_0 .net "diff", 0 0, L_000001ada6ce3760;  1 drivers
+S_000001ada6d161c0 .scope module, "dut" "full_subtractor" 2 24, 2 1 0, S_000001ada6d16030;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "borrow_in";
+    .port_info 3 /OUTPUT 1 "borrow_out";
+    .port_info 4 /OUTPUT 1 "diff";
+L_000001ada6ce3600 .functor XOR 1, v000001ada6d14940_0, v000001ada6d14bc0_0, C4<0>, C4<0>;
+L_000001ada6ce3760 .functor XOR 1, L_000001ada6ce3600, v000001ada6d14b20_0, C4<0>, C4<0>;
+L_000001ada6d14d20 .functor NOT 1, v000001ada6d14940_0, C4<0>, C4<0>, C4<0>;
+L_000001ada6d64920 .functor AND 1, L_000001ada6d14d20, v000001ada6d14bc0_0, C4<1>, C4<1>;
+L_000001ada6d64e60 .functor XOR 1, v000001ada6d14940_0, v000001ada6d14bc0_0, C4<0>, C4<0>;
+L_000001ada6d64c30 .functor NOT 1, L_000001ada6d64e60, C4<0>, C4<0>, C4<0>;
+L_000001ada6d64bc0 .functor AND 1, L_000001ada6d64c30, v000001ada6d14b20_0, C4<1>, C4<1>;
+L_000001ada6d64ed0 .functor OR 1, L_000001ada6d64920, L_000001ada6d64bc0, C4<0>, C4<0>;
+v000001ada6d16350_0 .net *"_ivl_0", 0 0, L_000001ada6ce3600;  1 drivers
+v000001ada6ce30e0_0 .net *"_ivl_10", 0 0, L_000001ada6d64c30;  1 drivers
+v000001ada6d163f0_0 .net *"_ivl_12", 0 0, L_000001ada6d64bc0;  1 drivers
+v000001ada6d138c0_0 .net *"_ivl_4", 0 0, L_000001ada6d14d20;  1 drivers
+v000001ada6d13960_0 .net *"_ivl_6", 0 0, L_000001ada6d64920;  1 drivers
+v000001ada6d13a00_0 .net *"_ivl_8", 0 0, L_000001ada6d64e60;  1 drivers
+v000001ada6d13aa0_0 .net "a", 0 0, v000001ada6d14940_0;  1 drivers
+v000001ada6d13b40_0 .net "b", 0 0, v000001ada6d14bc0_0;  1 drivers
+v000001ada6d13be0_0 .net "borrow_in", 0 0, v000001ada6d14b20_0;  1 drivers
+v000001ada6d143a0_0 .net "borrow_out", 0 0, L_000001ada6d64ed0;  alias, 1 drivers
+v000001ada6d149e0_0 .net "diff", 0 0, L_000001ada6ce3760;  alias, 1 drivers
+    .scope S_000001ada6d16030;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001ada6d14940_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001ada6d14bc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001ada6d14b20_0, 0, 1;
+    %delay 20, 0;
+    %vpi_call 2 37 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_000001ada6d16030;
+T_1 ;
+    %delay 4, 0;
+    %load/vec4 v000001ada6d14940_0;
+    %addi 1, 0, 1;
+    %store/vec4 v000001ada6d14940_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_000001ada6d16030;
+T_2 ;
+    %delay 2, 0;
+    %load/vec4 v000001ada6d14bc0_0;
+    %addi 1, 0, 1;
+    %store/vec4 v000001ada6d14bc0_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_000001ada6d16030;
+T_3 ;
+    %delay 1, 0;
+    %load/vec4 v000001ada6d14b20_0;
+    %pad/u 2;
+    %addi 1, 0, 2;
+    %pad/u 1;
+    %store/vec4 v000001ada6d14b20_0, 0, 1;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_000001ada6d16030;
+T_4 ;
+    %vpi_call 2 45 "$monitor", "time = %g, a = %b, b = %b, borrow_in = %b, borrow_out, diff", $time, v000001ada6d14940_0, v000001ada6d14bc0_0, v000001ada6d14b20_0, v000001ada6d14760_0, v000001ada6d14c60_0 {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "data_flow.v";
