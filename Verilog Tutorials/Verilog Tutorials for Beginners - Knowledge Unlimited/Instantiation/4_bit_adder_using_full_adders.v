@@ -88,32 +88,6 @@ module testbench;
 endmodule
 
 /*OUTPUT:
-time = 0, carry = 0, sum =  0, a =  0, b =  0, cin = 0
-time = 1, carry = 0, sum =  1, a =  0, b =  1, cin = 0  
-time = 2, carry = 0, sum =  3, a =  1, b =  2, cin = 0  
-time = 3, carry = 0, sum =  4, a =  1, b =  3, cin = 0  
-time = 4, carry = 0, sum =  6, a =  2, b =  4, cin = 0  
-time = 5, carry = 0, sum =  7, a =  2, b =  5, cin = 0  
-time = 6, carry = 0, sum =  9, a =  3, b =  6, cin = 0  
-time = 7, carry = 0, sum = 10, a =  3, b =  7, cin = 0  
-time = 8, carry = 0, sum = 12, a =  4, b =  8, cin = 0  
-time = 9, carry = 0, sum = 13, a =  4, b =  9, cin = 0  
-time = 10, carry = 0, sum = 15, a =  5, b = 10, cin = 0 
-time = 11, carry = 1, sum =  0, a =  5, b = 11, cin = 0 
-time = 12, carry = 1, sum =  2, a =  6, b = 12, cin = 0 
-time = 13, carry = 1, sum =  3, a =  6, b = 13, cin = 0 
-time = 14, carry = 1, sum =  5, a =  7, b = 14, cin = 0 
-time = 15, carry = 1, sum =  6, a =  7, b = 15, cin = 0 
-time = 16, carry = 0, sum =  8, a =  8, b =  0, cin = 0 
-time = 17, carry = 0, sum =  9, a =  8, b =  1, cin = 0 
-time = 18, carry = 0, sum = 11, a =  9, b =  2, cin = 0 
-time = 19, carry = 0, sum = 12, a =  9, b =  3, cin = 0 
-4_bit_adder_using_full_adders.v:85: $finish called at 20 (1ps)
-time = 20, carry = 0, sum = 14, a = 10, b =  4, cin = 0 
-
-(base) P:\Verilog\Verilog Tutorials\Verilog Tutorials for Beginners - Knowledge Unlimited\Instantiation>iverilog -o 4_bit_adder_using_full_adders.vvp 4_bit_adder_using_full_adders.v
-
-(base) P:\Verilog\Verilog Tutorials\Verilog Tutorials for Beginners - Knowledge Unlimited\Instantiation>vvp 4_bit_adder_using_full_adders.vvp
 time = 0, carry = 0, sum = 0000, a = 0000, b = 0000, cin = 0
 time = 1, carry = 0, sum = 0001, a = 0000, b = 0001, cin = 0
 time = 2, carry = 0, sum = 0011, a = 0001, b = 0010, cin = 0
