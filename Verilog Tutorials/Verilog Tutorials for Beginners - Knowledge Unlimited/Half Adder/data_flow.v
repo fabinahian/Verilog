@@ -36,8 +36,6 @@ module testbench;
 
   end
 
-
-
   initial $monitor("time = %g, a = %b, b = %b, carry = %b, sum = %b", $time, a, b, carry, sum);
 
   half_adder dut (
