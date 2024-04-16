@@ -31,7 +31,9 @@ module full_adder (
       b,
       carry_ha1,
       w1
-  );
+  );  //in this method of creating an instance of the half adder, the pins are fed in accordance with the order of the original half adder module. eg. carry_ha1 is being connected to 'carry' of the half adder module.
+
+  //instantiation can be done using dot notation as well in which case, order of ports doesn't matter
 
   half_adder ha2 (
       w1,
